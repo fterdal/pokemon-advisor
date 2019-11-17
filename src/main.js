@@ -42,6 +42,7 @@ const types = {
   water
 }
 
+import './style.scss'
 const Main = () => {
   const typeEntries = Object.entries(types)
   return (
