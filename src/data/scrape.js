@@ -1,3 +1,5 @@
+// Run this in a NodeJS environment
+
 const axios = require("axios")
 const { writeFileSync } = require("fs")
 
