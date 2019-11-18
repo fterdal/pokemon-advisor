@@ -1,0 +1,13 @@
+.top-navbar {
+  background-color: black;
+  display: flex;
+  margin-bottom: 1rem;
+  a {
+    color: white;
+    margin: 0.5rem;
+    text-decoration: none;
+  }
+  .active {
+    text-decoration: underline;
+  }
+}
