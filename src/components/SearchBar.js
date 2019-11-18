@@ -14,13 +14,14 @@ const SearchBar = () => {
     }
   }, [])
   const handleChange = evt => {
-    if (evt.target.value) {
+    const input = evt.target.value.toLowerCase()
+    if (input) {
       const stringifiedQuery = stringify({
-        search: evt.target.value
+        search: input
       })
       history.replace(`?${stringifiedQuery}`)
     } else history.replace("")
-    setSearchValue(evt.target.value)
+    setSearchValue(input)
   }
   return (
     <input
