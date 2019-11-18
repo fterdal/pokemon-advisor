@@ -1,10 +1,18 @@
+.single-type-container {
+  border: 1px solid black;
+  margin: 0.5rem;
+}
+
+.single-type-header {
+  margin-bottom: 0px;
+}
+
 .single-type-grid-parent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-column-gap: 2px;
   grid-row-gap: 2px;
-  border: 1px solid black;
 }
 
 .grid-label {
@@ -15,6 +23,7 @@
 .shorthand-label {
   font-style: italic;
   font-size: small;
+  text-decoration: underline;
   text-align: center;
 }
 
