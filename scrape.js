@@ -10,14 +10,12 @@ const { writeFileSync } = require("fs")
       console.log(`Writing ${data.name}...`)
       let transformedData = {}
       Object.keys(data.damage_relations).forEach(key => {
-        transformedData[key] = data.damage_relations[key].reduce(
-          (acc, elem) => {
-            return [...acc, elem.name]
-          },
-          []
-        )
+        transformedData[key] = data.damage_relations[key].map(elem => elem.name)
       })
-      writeFileSync(`./type-${data.name}.json`, JSON.stringify(transformedData))
+      writeFileSync(
+        `./src/data/type-${data.name}.json`,
+        JSON.stringify(transformedData)
+      )
     }
     console.log("Done Writing!")
   } catch (err) {
