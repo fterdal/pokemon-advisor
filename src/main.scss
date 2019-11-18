@@ -17,3 +17,10 @@ ul {
   list-style: none;
   padding: 0px;
 }
+
+.types-list {
+  display: flex;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

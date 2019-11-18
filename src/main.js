@@ -48,11 +48,11 @@ const Main = () => {
   return (
     <>
       <h1>Pokémon Type Advisor</h1>
-      <ul className="types-list">
+      <div className="types-list">
         {typeEntries.map(([typeName, typeData]) => (
           <SingleType typeName={typeName} typeData={typeData} key={typeName} />
         ))}
-      </ul>
+      </div>
     </>
   )
 }

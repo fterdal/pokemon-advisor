@@ -9,10 +9,10 @@ const SingleType = ({ typeName, typeData }) => {
     half_damage_to
   } = typeData
   return (
-    <>
-      <hr />
+    <div className="single-type-container">
+      {/* <hr /> */}
       <h3>{typeName.toUpperCase()}</h3>
-      <div className="single-type-parent">
+      <div className="single-type-grid-parent">
         <div />
         <div className="grid-label">Damage From</div>
         <div className="grid-label">Damage To</div>
@@ -51,7 +51,7 @@ const SingleType = ({ typeName, typeData }) => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
