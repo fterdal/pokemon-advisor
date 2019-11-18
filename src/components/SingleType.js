@@ -13,11 +13,11 @@ const SingleType = ({ typeName, typeData }) => {
       {/* <hr /> */}
       <h3>{typeName.toUpperCase()}</h3>
       <div className="single-type-grid-parent">
-        <div />
-        <div className="grid-label">Damage From</div>
+        {/* <div /> */}
+        {/* <div className="grid-label">Damage From</div>
         <div className="grid-label">Damage To</div>
-        <div className="grid-label">Double</div>
-        <div>
+        <div className="grid-label">Double</div> */}
+        <div className="single-type-grid-cell">
           <p className="shorthand-label">Vulnerable To:</p>
           <ul>
             {double_damage_from.map(type => (
@@ -25,7 +25,7 @@ const SingleType = ({ typeName, typeData }) => {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="single-type-grid-cell">
           <p className="shorthand-label">Super Effective Against:</p>
           <ul>
             {double_damage_to.map(type => (
@@ -33,8 +33,8 @@ const SingleType = ({ typeName, typeData }) => {
             ))}
           </ul>
         </div>
-        <div className="grid-label">Half</div>
-        <div>
+        {/* <div className="grid-label">Half</div> */}
+        <div className="single-type-grid-cell">
           <p className="shorthand-label">Resistant To:</p>
           <ul>
             {half_damage_from.map(type => (
@@ -42,7 +42,7 @@ const SingleType = ({ typeName, typeData }) => {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="single-type-grid-cell">
           <p className="shorthand-label">Not Very Effective Against:</p>
           <ul>
             {half_damage_to.map(type => (
