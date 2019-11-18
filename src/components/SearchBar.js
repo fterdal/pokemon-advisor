@@ -1,18 +1,26 @@
 import React, { useState, useEffect } from "react"
 import { useHistory, useLocation } from "react-router-dom"
-import { stringify } from "query-string"
+import { stringify, parse } from "query-string"
 
-import './SearchBar.scss'
+import "./SearchBar.scss"
 const SearchBar = () => {
   const history = useHistory()
   const { search } = useLocation()
   const [searchValue, setSearchValue] = useState("")
   useEffect(() => {
-    if (search) setSearchValue(search)
+    if (search) {
+      const parsedSearch = parse(search)
+      setSearchValue(parsedSearch.search)
+    }
   }, [])
   const handleChange = evt => {
-    console.log(evt.target.value)
-    history.search
+    if (evt.target.value) {
+      const stringifiedQuery = stringify({
+        search: evt.target.value
+      })
+      history.replace(`?${stringifiedQuery}`)
+    } else history.replace("")
+    setSearchValue(evt.target.value)
   }
   return (
     <input
