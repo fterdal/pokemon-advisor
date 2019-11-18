@@ -1,0 +1,17 @@
+.single-type-parent {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 2fr);
+  grid-template-rows: 1fr repeat(2, 2fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+}
+
+.grid-label {
+  margin: auto;
+  font-weight: bold;
+}
+
+.shorthand-label {
+  font-style: italic;
+  font-size: small;
+}

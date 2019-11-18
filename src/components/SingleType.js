@@ -1,5 +1,6 @@
 import React from "react"
 
+import './SingleType.scss'
 const SingleType = ({ typeName, typeData }) => {
   const {
     double_damage_from,
@@ -9,38 +10,46 @@ const SingleType = ({ typeName, typeData }) => {
   } = typeData
   return (
     <>
-      <h2>{typeName}</h2>
-      <div>
-        <h3>Double Damage From:</h3>
-        <ul>
-          {double_damage_from.map(type => (
-            <li key={type}>{type}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3>Double Damage To:</h3>
-        <ul>
-          {double_damage_to.map(type => (
-            <li key={type}>{type}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3>Half Damage From:</h3>
-        <ul>
-          {half_damage_from.map(type => (
-            <li key={type}>{type}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3>Half Damage To:</h3>
-        <ul>
-          {half_damage_to.map(type => (
-            <li key={type}>{type}</li>
-          ))}
-        </ul>
+      <hr />
+      <h3>{typeName.toUpperCase()}</h3>
+      <div className="single-type-parent">
+        <div />
+        <div className="grid-label">Damage From</div>
+        <div className="grid-label">Damage To</div>
+        <div className="grid-label">Double</div>
+        <div>
+          <p className="shorthand-label">Vulnerable To:</p>
+          <ul>
+            {double_damage_from.map(type => (
+              <li key={type}>{type}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="shorthand-label">Super Effective Against:</p>
+          <ul>
+            {double_damage_to.map(type => (
+              <li key={type}>{type}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="grid-label">Half</div>
+        <div>
+          <p className="shorthand-label">Resistant To:</p>
+          <ul>
+            {half_damage_from.map(type => (
+              <li key={type}>{type}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="shorthand-label">Not Very Effective Against:</p>
+          <ul>
+            {half_damage_to.map(type => (
+              <li key={type}>{type}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   )
