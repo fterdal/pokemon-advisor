@@ -21,6 +21,7 @@ import rock from "../data/type-rock.json"
 import steel from "../data/type-steel.json"
 import water from "../data/type-water.json"
 import SingleType from "./SingleType.js"
+import SearchBar from "./SearchBar.js"
 
 const types = {
   bug,
@@ -43,6 +44,7 @@ const types = {
   water
 }
 
+import './App.scss'
 const App = () => {
   const typeEntries = Object.entries(types)
   const location = useLocation()
@@ -54,14 +56,15 @@ const App = () => {
           return typeName.includes(search)
         })
   return (
-    <>
+    <div className="app-container">
       <h1>Pokémon Type Advisor</h1>
+      <SearchBar />
       <div className="types-list">
         {matchingTypes.map(([typeName, typeData]) => (
           <SingleType typeName={typeName} typeData={typeData} key={typeName} />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
